@@ -1,6 +1,8 @@
 package com.sw926.mediastoreutils
 
-import android.net.Uri
+import android.content.Context
+import android.database.Cursor
+import android.os.Build
 import android.provider.MediaStore
 
 /**
@@ -9,5 +11,15 @@ import android.provider.MediaStore
 
 class ImageLoader internal constructor() : BaseMediaLoader() {
 
-    override val contentUri: Uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+    override fun createQuery(context: Context): Cursor? {
+        val selection = "${MediaStore.MediaColumns.SIZE}>0"
+        return context.contentResolver.query(
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            ProjectionHelper.projection,
+            selection,
+            null,
+            null
+        )
+    }
+
 }

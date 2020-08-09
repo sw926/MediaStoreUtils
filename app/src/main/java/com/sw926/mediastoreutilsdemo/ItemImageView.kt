@@ -26,6 +26,10 @@ class ItemImageView @JvmOverloads constructor(
     @JvmField
     var images: List<MediaItem>? = null
 
+    @ModelProp
+    @JvmField
+    var mediaItem: MediaItem? = null
+
     init {
         View.inflate(context, R.layout.item_media_image, this)
     }

@@ -17,7 +17,7 @@ data class MediaItem(
     val height: Int,
     val dateAdded: Long,
     val dateModified: Long,
-    val mineType: String,
+    val mineType: String?,
     val size: Long,
     val duration: Long
 ) : Parcelable

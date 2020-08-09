@@ -8,7 +8,6 @@ group='com.github.sw926'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.0"
 
     defaultConfig {
         minSdkVersion 16
